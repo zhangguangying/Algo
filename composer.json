@@ -1,0 +1,16 @@
+{
+    "name": "zhangguangying/algo",
+    "authors": [
+        {
+            "name": "zhangguangying",
+            "email": "786781353@qq.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "hash\\": "hash/",
+            "linkedList\\": "linkedList/"
+        }
+    }
+}
