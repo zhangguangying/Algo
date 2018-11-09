@@ -18,6 +18,11 @@ class SingleLinkedList
         $this->length = 0;
     }
 
+    public function __clone()
+    {
+        $this->head = clone $this->head;
+    }
+
     public function insert($data)
     {
         if (is_object($data)) {
@@ -114,5 +119,25 @@ class SingleLinkedList
     public function getLength()
     {
         return $this->length;
+    }
+
+    public function reverse($list)
+    {
+        $headNode = NULL;
+        $preNode = NULL;
+        $curNode = clone $list;
+        $curNode = $curNode->head->next;
+        while ($curNode !== NULL) {
+            $nextNode = $curNode->next;
+            
+            $curNode->next = $preNode;
+            
+            $preNode = $curNode;
+
+            if ($nextNode === NULL) {
+                return $curNode;
+            }
+            $curNode = $nextNode;
+        }
     }
 }

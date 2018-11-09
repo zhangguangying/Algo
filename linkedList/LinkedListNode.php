@@ -13,4 +13,11 @@ class LinkedListNode
         $this->data = $data;
         $this->next = $next;
     }
+
+    public function __clone()
+    {
+        if (is_object($this->next)) {
+            $this->next = clone $this->next;
+        }
+    }
 }

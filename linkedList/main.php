@@ -6,13 +6,15 @@ use linkedList\SingleLinkedList;
 use linkedList\LinkedListNode;
 use linkedList\Lru;
 
-$singleLinkedList = new lru();
+$singleLinkedList = new SingleLinkedList();
 $node = new LinkedListNode(14);
 $singleLinkedList->insert(12);
 $singleLinkedList->insert(13);
 $singleLinkedList->insert($node);
 $singleLinkedList->insert(15);
-print_r($singleLinkedList->findData(14));
-print_r($singleLinkedList->findData(12));
+
+$reverse = $singleLinkedList->reverse($singleLinkedList);
 
 print_r($singleLinkedList);
+
+print_r($reverse);
